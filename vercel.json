@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/sertifikat.js",
+      "use": "@vercel/node",
+      "config": {
+        "maxDuration": 10 // Opsional: Beri waktu lebih lama untuk memproses gambar
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/sertifikat",
+      "dest": "/api/sertifikat.js"
+    },
+    {
+      "src": "/api/sertifikat(.*)",
+      "dest": "/api/sertifikat.js"
+    }
+  ]
+}
