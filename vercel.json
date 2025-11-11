@@ -1,22 +1,26 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "api/sertifikat.js",
+    { 
+      "src": "api/sertifikat.js", 
       "use": "@vercel/node",
       "config": {
-        "maxDuration": 10 // Opsional: Beri waktu lebih lama untuk memproses gambar
+        "maxDuration": 10
       }
+    },
+    { 
+      "src": "public/**", 
+      "use": "@vercel/static" 
+    },
+    { 
+      "src": "base_image.png", 
+      "use": "@vercel/static" 
     }
   ],
   "routes": [
-    {
-      "src": "/api/sertifikat",
-      "dest": "/api/sertifikat.js"
-    },
-    {
-      "src": "/api/sertifikat(.*)",
-      "dest": "/api/sertifikat.js"
+    { 
+      "src": "/api/sertifikat(.*)", 
+      "dest": "/api/sertifikat.js" 
     }
   ]
 }
